@@ -84,6 +84,28 @@ Order history
 
 ![Home](ss/1.PNG)
 
+![Home](ss/arrival.PNG)
+
+![Home](ss/most_selling.PNG)
+
+![Home](ss/about.PNG)
+
+![Home](ss/category1.PNG)
+
+![Home](ss/category2.PNG)
+
+![Home](ss/cartsection.PNG)
+
+![Home](ss/final.PNG)
+
+![Home](ss/thankyou.PNG)
+
+![Home](ss/contact.PNG)
+
+
+
+
+
 
 
 
