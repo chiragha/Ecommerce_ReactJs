@@ -1,16 +1,92 @@
-# React + Vite
+# 🛍️ React E-Commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **E-commerce web application** built using **React, Tailwind CSS, and Context API**.  
+Users can browse products, add items to cart, manage quantities, and complete checkout.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** [https://ecommerce-react-js-ochre.vercel.app/]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🛒 Add products to cart
+- 🔁 Cart persistence using Local Storage
+- ➕ Increase / Decrease product quantity
+- ❌ Remove individual items or clear cart
+- 💳 Checkout form with loading spinner
+- 📦 Order confirmation page
+- 🎨 Responsive UI with Tailwind CSS
+- ⚡ Fast deployment using Vercel
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Frontend:** React
+- **Styling:** Tailwind CSS
+- **State Management:** Context API
+- **Routing:** React Router
+- **Icons:** React Icons
+- **Deployment:** Vercel
+
+---
+
+## 📂 Project Structure
+
+src
+│
+├── components
+│ ├── Navbar.jsx
+│ ├── ProductCard.jsx
+│ ├── Footer.jsx
+│
+├── pages
+│ ├── Home.jsx
+│ ├── Cart.jsx
+│ ├── Checkout.jsx
+│ ├── ThankYou.jsx
+│
+├── context
+│ └── CartContext.jsx
+│
+└── App.jsx
+
+
+
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/chiragha/Ecommerce_ReactJs
+
+npm install
+
+npm run dev
+
+```
+
+## 📌 Future Improvements
+
+Product filtering & search
+
+Authentication system
+
+Payment gateway integration
+
+Backend with Node.js / MongoDB
+
+Order history
+
+
+### 👩‍💻 Author
+
+Shivani Sinha
+
+GitHub: https://github.com/chiragha
+
+Portfolio: https://chiragha.vercel.app
+
+⭐ If you like this project, give it a star!
