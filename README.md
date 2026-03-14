@@ -84,6 +84,8 @@ Order history
 
 ![Home](ss/1.PNG)
 
+![Home](ss/final.PNG)
+
 ![Home](ss/most_selling.PNG)
 
 ![Home](ss/about.PNG)
@@ -97,8 +99,6 @@ Order history
 ![Home](ss/cartsection.PNG)
 
 ![Home](ss/process.PNG)
-
-![Home](ss/final.PNG)
 
 ![Home](ss/thankyou.PNG)
 
