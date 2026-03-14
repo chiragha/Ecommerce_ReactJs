@@ -90,11 +90,15 @@ Order history
 
 ![Home](ss/about.PNG)
 
+![Home](ss/addcart.PNG)
+
 ![Home](ss/category1.PNG)
 
 ![Home](ss/category2.PNG)
 
 ![Home](ss/cartsection.PNG)
+
+![Home](ss/process.PNG)
 
 ![Home](ss/final.PNG)
 
