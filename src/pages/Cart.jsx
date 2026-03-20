@@ -84,7 +84,7 @@ const Cart = () => {
 
                     <button
                       className="px-3"
-                      onClick={() => decreaseQty(product.id)}
+                     onClick={() => decreaseQty(product.id, product.type)}
                     >
                       -
                     </button>
@@ -93,7 +93,7 @@ const Cart = () => {
 
                     <button
                       className="px-3"
-                      onClick={() => increaseQty(product.id)}
+                     onClick={() => increaseQty(product.id, product.type)}
                     >
                       +
                     </button>
@@ -111,7 +111,7 @@ const Cart = () => {
               </p>
 
               <button
-                onClick={() => removeFromCart(product.id)}
+               onClick={() => removeFromCart(product.id, product.type)}
                 className="text-blue-500 text-sm mt-2 cursor-pointer"
               >
                 Remove

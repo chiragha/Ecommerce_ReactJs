@@ -19,49 +19,50 @@ export const CartProvider = ({ children }) => {
 
 
   // add to cart code with quantity management
-  const addToCart = (product) => {
-    const exist = cart.find((item) => item.id === product.id);
+ const addToCart = (product) => {
+  const exist = cart.find(
+    (item) => item.id === product.id && item.type === product.type
+  );
 
-    if (exist) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, qty: item.qty + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, qty: 1 }]);
-    }
-  };
+  if (exist) {
+    setCart(
+      cart.map((item) =>
+        item.id === product.id && item.type === product.type
+          ? { ...item, qty: (item.qty || 1) + 1 }
+          : item
+      )
+    );
+  } else {
+    setCart([...cart, { ...product, qty: 1 }]);
+  }
+};
 
 
   // remove specific items from cart
 
-  const removeFromCart = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
-  };
+const removeFromCart = (id, type) => {
+  setCart(cart.filter(item => !(item.id === id && item.type === type)));
+};
 
-  // increase quantity of specific item in cart
-  const increaseQty = (id) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
+ const increaseQty = (id, type) => {
+  setCart(
+    cart.map((item) =>
+      item.id === id && item.type === type
+        ? { ...item, qty: item.qty + 1 }
+        : item
+    )
+  );
+};
 
-
-  // decrease quantity of specific item in cart
-  const decreaseQty = (id) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      )
-    );
-  };
+const decreaseQty = (id, type) => {
+  setCart(
+    cart.map((item) =>
+      item.id === id && item.type === type && item.qty > 1
+        ? { ...item, qty: item.qty - 1 }
+        : item
+    )
+  );
+};
 
   // removeAllItems from cart
 
