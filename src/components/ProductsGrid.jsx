@@ -1,7 +1,7 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const products = [
   {
@@ -15,7 +15,7 @@ const products = [
     type: "summer",
     price: "245.00",
     image:
-      "https://plus.unsplash.com/premium_photo-1705554519869-fdcebc4ba94b?q=80&w=387&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1705554519869-fdcebc4ba94b",
   },
   {
     id: 3,
@@ -47,53 +47,68 @@ const SummerCollection = () => {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   return (
-    <section className="bg-gray-100 py-16 px-10">
-      <div className="flex justify-between items-center mb-10">
-        <h2 className="text-3xl font-bold tracking-widest text-[#6a0610] ">
+    <section className="bg-gray-100 py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-16">
+
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-widest text-[#6a0610] text-center sm:text-left">
           MOST SELLING PRODUCTS
         </h2>
 
         <Link
           to="/products"
-          className="rounded border-2 border-[#6a0610] px-6 py-2 hover:bg-white hover:text-[#6a0610] transition bg-[#6a0610] text-white"
+          className="rounded border-2 border-[#6a0610] px-5 py-2 text-sm sm:text-base hover:bg-white hover:text-[#6a0610] transition bg-[#6a0610] text-white"
         >
           VIEW ALL →
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 max-w-6xl mx-auto">
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
         {products.map((product) => {
           const inCart = cart.find(
-            (item) => item.id === product.id && item.type === product.type,
+            (item) => item.id === product.id && item.type === product.type
           );
 
           return (
-            <div key={product.id} className="text-center">
-              <div className=" cursor-pointer">
+            <motion.div
+              key={product.id}
+              whileHover={{ y: -5 }}
+              className="text-center bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition"
+            >
+
+              {/* Image */}
+              <div className="overflow-hidden cursor-pointer">
                 <img
                   src={product.image}
                   alt="product"
-                  className="w-full h-60 object-cover "
+                  className="w-full h-[200px] sm:h-[220px] md:h-[240px] object-cover group-hover:scale-110 transition duration-500"
                 />
               </div>
 
+              {/* Button */}
               <button
                 onClick={() =>
                   inCart
                     ? removeFromCart(product.id, product.type)
                     : addToCart(product)
                 }
-                className={`mt-4 w-full py-2 rounded ${
-                  inCart
-                    ? "bg-green-500 text-black hover:bg-green-600 cursor-pointer"
-                    : " hover:bg-white hover:text-[#6a0610] transition bg-[#6a0610] text-white cursor-pointer"
-                }`}
+                className={`mt-4 mx-4 py-2 w-[calc(100%-2rem)] rounded transition duration-300
+                  ${
+                    inCart
+                      ? "bg-green-500 text-black hover:bg-green-600"
+                      : "bg-[#6a0610] text-white hover:bg-white hover:text-[#6a0610] border border-[#6a0610]"
+                  }
+                `}
               >
                 {inCart ? "In Cart ✓" : "Add To Cart →"}
               </button>
 
-              <p className="mt-2 font-semibold">${product.price}</p>
-            </div>
+              {/* Price */}
+              <p className="mt-3 mb-4 font-semibold text-sm sm:text-base">
+                ${product.price}
+              </p>
+            </motion.div>
           );
         })}
       </div>
